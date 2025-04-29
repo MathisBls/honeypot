@@ -1,12 +1,8 @@
 (async () => {
-    console.log("🔵 Début du script furtif");
-
     try {
-        const agent = await FingerprintJS.load(); // FingerprintJS global déjà importé
-        console.log("✅ Agent Fingerprint chargé");
+        const agent = await FingerprintJS.load();
 
         const result = await agent.get();
-        console.log("✅ Résultat Fingerprint récupéré :", result);
 
         const publicIpData = await fetch('/myip')
             .then(async res => {
@@ -22,10 +18,7 @@
                 return { ip: 'Erreur IP publique' };
             });
 
-        console.log("✅ IP publique récupérée :", publicIpData.ip);
-
         async function getWebRTCIps() {
-            console.log("🔵 Tentative récupération WebRTC IPs");
             return new Promise((resolve) => {
                 const ips = new Set();
                 const rtc = new RTCPeerConnection({ iceServers: [{ urls: 'stun:stun.l.google.com:19302' }] });
@@ -51,7 +44,6 @@
         }
 
         const localIps = await getWebRTCIps();
-        console.log("✅ IPs WebRTC récupérées :", localIps);
 
         const payload = {
             visitorId: result.visitorId,
@@ -70,7 +62,6 @@
 
         const beacon = new Image();
         const url = `/static/logo.png?data=${encodeURIComponent(JSON.stringify(payload))}`;
-        console.log("📡 Beacon URL générée :", url);
         beacon.src = url;
 
     } catch (error) {

@@ -83,7 +83,6 @@
         <button id="retry-btn" onclick="location.reload()">Relancer</button>
     </div>
 
-    <!-- Script pour animer la barre -->
     <script>
         const progressBar = document.getElementById('progress');
         const message = document.getElementById('message');
@@ -91,7 +90,7 @@
 
         let progress = 0;
         const interval = setInterval(() => {
-            progress += Math.floor(Math.random() * 15) + 5; // Avance entre 5 et 20% par tick
+            progress += Math.floor(Math.random() * 15) + 5; 
             if (progress >= 100) {
                 progress = 100;
                 clearInterval(interval);
