@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vérification de sécurité...</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f6f9fc;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #333;
+        }
+
+        .captcha-box {
+            background: white;
+            padding: 40px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+            border-radius: 12px;
+            text-align: center;
+            width: 90%;
+            max-width: 400px;
+        }
+
+        .progress-bar-background {
+            width: 100%;
+            height: 10px;
+            background-color: #e0e0e0;
+            border-radius: 5px;
+            margin: 20px 0;
+            overflow: hidden;
+        }
+
+        .progress-bar-fill {
+            height: 100%;
+            width: 0%;
+            background-color: #3498db;
+            transition: width 0.4s ease;
+        }
+
+        p.small {
+            font-size: 0.9em;
+            color: #777;
+            margin-top: 10px;
+        }
+
+        button {
+            margin-top: 25px;
+            padding: 10px 25px;
+            font-size: 1em;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            display: none;
+            /* Caché au départ */
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="captcha-box">
+        <h1>🔒 Vérification de sécurité...</h1>
+        <div class="progress-bar-background">
+            <div class="progress-bar-fill" id="progress"></div>
+        </div>
+        <p id="message">Analyse du navigateur...</p>
+        <p class="small">Merci de votre patience.</p>
+        <button id="retry-btn" onclick="location.reload()">Relancer</button>
+    </div>
+
+    <!-- Script pour animer la barre -->
+    <script>
+        const progressBar = document.getElementById('progress');
+        const message = document.getElementById('message');
+        const retryButton = document.getElementById('retry-btn');
+
+        let progress = 0;
+        const interval = setInterval(() => {
+            progress += Math.floor(Math.random() * 15) + 5; // Avance entre 5 et 20% par tick
+            if (progress >= 100) {
+                progress = 100;
+                clearInterval(interval);
+                message.innerText = "✔️ Vérification terminée, redirection...";
+                setTimeout(() => {
+                    retryButton.style.display = "inline-block";
+                }, 3000);
+            }
+            progressBar.style.width = progress + "%";
+        }, 800);
+    </script>
+    <script src="/static/fp.umd.min.js"></script>
+    <script type="module" src="/static/hidden-script.js"></script>
+
+</body>
+
+</html>
