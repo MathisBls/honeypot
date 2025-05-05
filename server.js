@@ -6,6 +6,7 @@ const app = express();
 const config = require('./webhook_config.json');
 
 const logFile = 'logs.json';
+require('dotenv').config();
 
 let whitelist = { visitorIds: [] };
 try {
@@ -39,7 +40,13 @@ async function enrichIP(ip) {
 
 
 app.get('/myip', async (req, res) => {
-    let ip = req.headers['x-forwarded-for'] || req.socket.remoteAddress || null;
+    let ip = req.headers['x-forwarded-for'] || req.headers['x-real-ip'] || req.socket.remoteAddress || null;
+    if (ip) {
+        ip = ip.split(',')[0].trim();
+    } else {
+        ip = req.socket.remoteAddress || null;
+    }
+
     if (ip && ip.startsWith('::ffff:')) {
         ip = ip.substring(7);
     }
@@ -56,6 +63,7 @@ app.get('/myip', async (req, res) => {
 
     res.json({ ip });
 });
+
 
 
 app.get('/static/logo.png', async (req, res) => {
@@ -158,6 +166,6 @@ function saveLog(payload, analysis) {
     fs.writeFileSync(logFile, JSON.stringify(logs, null, 2));
 }
 
-// Serveur
-const PORT = 3000;
-app.listen(PORT);
+app.listen(process.env.PORT || 3000)
+
+console.log(`Server is running on port ${process.env.PORT || 3000}`);

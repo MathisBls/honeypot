@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ernest Musk - Compétences</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <span class="logo-text">Ernest Musk</span>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <nav id="nav-links">
+                <a href="index.html">Accueil</a>
+                <a href="competences.html"  class="active">Compétences</a>
+                <a href="projets.html">Projets</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="competences" class="section">
+            <h2>Compétences</h2>
+
+            <!-- Langages Web -->
+            <div class="competence-category">
+                <h3>Langages Web</h3>
+                <div class="skills-grid">
+                    <div class="skill-item">HTML</div>
+                    <div class="skill-item">CSS</div>
+                    <div class="skill-item">JavaScript</div>
+                    <div class="skill-item">PHP</div>
+                </div>
+            </div>
+
+            <!-- Frameworks -->
+            <div class="competence-category">
+                <h3>Frameworks</h3>
+                <div class="skills-grid">
+                    <div class="skill-item">
+                        <p>React.js</p>
+                    </div>
+                    <div class="skill-item">
+                        <p>Node.js</p>
+                    </div>
+                    <div class="skill-item">
+                        <p>Symfony</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- New Category: Outils -->
+            <div class="competence-category">
+                <h3>Outils</h3>
+                <div class="skills-grid">
+                    <div class="skill-item">Git</div>
+                    <div class="skill-item">Docker</div>
+                    <div class="skill-item">Visual Studio Code</div>
+                    <div class="skill-item">Postman</div>
+                </div>
+            </div>
+
+            <!-- New Category: Bdd (Databases) -->
+            <div class="competence-category">
+                <h3>Bdd</h3>
+                <div class="skills-grid">
+                    <div class="skill-item">MySQL</div>
+                    <div class="skill-item">PostgreSQL</div>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>Email: <a href="mailto:ernest.musk@gmail.com">ernest.musk@gmail.com</a></p>
+                <p>Téléphone: <a href="tel:+442012345678"></a>+44 20 1234 5678</a></p>
+            </div>
+            <div class="footer-section">
+                <h3>Liens rapides</h3>
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="competences.html">Compétences</a></li>
+                    <li><a href="projets.html">Projets</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Suivez-moi</h3>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/ernest-musk-bb4390363/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/" target="_blank"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Ernest Musk. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target); // Stop observing once it's visible
+                    }
+                });
+            }, {
+                threshold: 0.1 // The element is considered visible when 10% of it is in the viewport
+            });
+
+            // Sélectionnez tous les éléments de compétence pour observer
+            const items = document.querySelectorAll('.skill-item, .framework-item');
+            items.forEach(item => {
+                observer.observe(item);
+            });
+        });
+    </script>
+
+</body>
+</html>

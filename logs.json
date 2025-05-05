@@ -1,0 +1,84 @@
+[
+  {
+    "time": "2025-04-28T21:02:45.093Z",
+    "visitorId": "383079507731fd627685c698e00ba802",
+    "publicIp": "185.31.40.24",
+    "localIps": [
+      "e:1343971119",
+      "e:2077427216",
+      "e:2005190396",
+      "2a01:e0a:5fa:36a0:1db4:a769:2715:25af",
+      "e:93731343",
+      "88.127.232.218",
+      "0.0.0.0"
+    ],
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36",
+    "language": "fr-FR",
+    "timezone": "Europe/Paris",
+    "platform": "Win32",
+    "resolution": "1920x1080",
+    "geoIp": "🌍 France, Île-de-France, Paris",
+    "isp": "🏢 ISP: Alwaysdata Sarl",
+    "ipInsights": "🔎 Proxy: Non | Hosting: Oui | Mobile: Non"
+  },
+  {
+    "time": "2025-05-05T17:15:08.403Z",
+    "visitorId": "383079507731fd627685c698e00ba802",
+    "publicIp": "2a01:e0a:5fa:36a0:1db4:a769:2715:25af",
+    "localIps": [
+      "e:3899111687",
+      "e:3283083320",
+      "e:3186285607",
+      "88.127.232.218",
+      "0.0.0.0",
+      "e:3489145044",
+      "2a01:e0a:5fa:36a0:1db4:a769:2715:25af"
+    ],
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36",
+    "language": "fr-FR",
+    "timezone": "Europe/Paris",
+    "platform": "Win32",
+    "resolution": "1920x1080",
+    "status": "same_machine",
+    "analysisMessage": "🟠 Même machine détectée"
+  },
+  {
+    "time": "2025-05-05T17:15:29.240Z",
+    "visitorId": "dcac71ab8adca29fd895f1ac594616ed",
+    "publicIp": "46.193.65.25",
+    "localIps": [
+      "e:1472196349",
+      "e:2242273389",
+      "46.193.65.25",
+      "0.0.0.0"
+    ],
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36",
+    "language": "fr-FR",
+    "timezone": "Europe/Paris",
+    "platform": "Win32",
+    "resolution": "1536x864",
+    "status": "same_machine",
+    "analysisMessage": "🟠 Même machine détectée"
+  },
+  {
+    "time": "2025-05-05T17:16:46.119Z",
+    "visitorId": "383079507731fd627685c698e00ba802",
+    "publicIp": "2a01:e0a:5fa:36a0:1db4:a769:2715:25af",
+    "localIps": [
+      "e:3323843249",
+      "e:1884305365",
+      "e:3655388742",
+      "2a01:e0a:5fa:36a0:1db4:a769:2715:25af",
+      "e:4247158556",
+      "88.127.232.218",
+      "0.0.0.0"
+    ],
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36",
+    "language": "fr-FR",
+    "timezone": "Europe/Paris",
+    "platform": "Win32",
+    "resolution": "1920x1080",
+    "status": "same_machine",
+    "analysisMessage": "🟠 Même machine détectée"
+  }
+]
